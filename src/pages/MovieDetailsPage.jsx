@@ -16,14 +16,14 @@ export default function MovieDetailsPage() {
 
     const posterUrl = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-    : 'https://via.placeholder.com/300x450?text=No+Image';
+    : "https://placehold.co/100x150?text=No+Photo";
 
     const genres = movie.genres?.map(genre => genre.name).join(', ');
     const votePercentage = Math.round(movie.vote_average * 10);
     
     return (
       <div style={{ padding: '20px' }}>
-        <Link to={backLinkHref}>← Go back</Link>
+        <Link to={backLinkHref}>Go back</Link>
         <div style={{ display: 'flex', gap: '20px', marginTop: '20px' }}>
         <img src={posterUrl} alt={`${movie.title} poster`} width="200" style={{ flexShrink: 0, borderRadius: '8px' }}/>
         <div> 
